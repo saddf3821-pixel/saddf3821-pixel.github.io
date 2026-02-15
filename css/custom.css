@@ -1,0 +1,29 @@
+/* 1. 全局星空背景 */
+body {
+    background: url(/img/bg.jpg) center center / cover no-repeat fixed !important;
+}
+
+/* 隐藏自带背景，横幅变透明 */
+#web_bg { display: none !important; }
+#page-header { background: transparent !important; }
+
+/* 2. 所有卡片的毛玻璃特效（白天模式） */
+#recent-posts > .recent-post-item,
+#aside-content .card-widget,
+.layout > div:first-child:not(.recent-posts) {
+    background: rgba(255, 255, 255, 0.25) !important; /* 透明度从 45% 降到 25%，更加通透 */
+    backdrop-filter: blur(10px) !important; /* 虚化程度 */
+    -webkit-backdrop-filter: blur(10px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.5) !important; /* 边缘高光 */
+    border-radius: 15px !important; 
+    box-shadow: 0 8px 16px -4px rgba(0,0,0,0.1) !important;
+}
+
+/* 3. 终极奥义：夜间模式下的深色毛玻璃（赛博朋克必备） */
+[data-theme="dark"] #recent-posts > .recent-post-item,
+[data-theme="dark"] #aside-content .card-widget,
+[data-theme="dark"] .layout > div:first-child:not(.recent-posts) {
+    background: rgba(0, 0, 0, 0.4) !important; /* 黑色半透明 */
+    border: 1px solid rgba(255, 255, 255, 0.15) !important; /* 微微的白光边缘 */
+    box-shadow: 0 8px 16px -4px rgba(0,0,0,0.5) !important;
+}
