@@ -27,3 +27,37 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.15) !important; /* 微微的白光边缘 */
     box-shadow: 0 8px 16px -4px rgba(0,0,0,0.5) !important;
 }
+
+/* =========================================
+   1. 字体大小与样式自定义（解决字号问题）
+========================================= */
+/* 修改屏幕中间的大字标题 */
+#site-title {
+    font-size: 3.5rem !important; /* 默认约 2.5，数字越大字越大 */
+    font-family: "Microsoft YaHei", sans-serif !important; /* 可以在这里换字体 */
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.6) !important; /* 加深阴影，让字更锐利 */
+}
+
+/* 修改左上角的名字字号 */
+#blog-title {
+    font-size: 1.6rem !important; 
+    font-weight: bold !important;
+}
+
+
+/* =========================================
+   2. 拯救日间模式（解决模糊看不清问题）
+========================================= */
+/* 当切换到白天模式时，强制把全局字体变成极深的纯黑色 */
+[data-theme="light"] {
+    --font-color: #1a1a1a !important; 
+    --text-highlight-color: #000000 !important;
+}
+
+/* 调高白天模式卡片的不透明度，给文字一个干净的白底 */
+[data-theme="light"] #recent-posts > .recent-post-item,
+[data-theme="light"] #aside-content .card-widget,
+[data-theme="light"] .layout > div:first-child:not(.recent-posts) {
+    background: rgba(255, 255, 255, 0.60) !important; /* 把之前的透明度调高到 0.75 */
+    border: 1px solid rgba(255, 255, 255, 0.8) !important;
+}
